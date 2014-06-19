@@ -1,6 +1,8 @@
 /**
  * Never gonna give you up - Rick Astley
- * Copy-paste into Wavepot's editor to run
+ *
+ * Not quite finished yet... But it's a start! Copy & paste into Wavepot's code
+ * editor and hit the top left "Play" button to run :)
  * @link http://wavepot.com/
  */
 
@@ -83,7 +85,7 @@ function dsp(t, f) {
   ;
   var synth = sequence(1/2, synth_pattern_1, t) * env(1, synth_osc_1, 1, 1, t)
   + sequence(1/4, synth_pattern_2, t) * env(1/16, synth_osc_2, 0, 0, t);
-  
+
   // Bass
   var basseq = sequence(1, bass_notes, t);
   var bass_osc = 0.7 * tri(basseq, t);
@@ -125,3 +127,4 @@ function sin(x, t) { return Math.sin(tau * t * x); }
 function saw(x, t) { return 1-2 * (t % (1/x)) * x; }
 function sqr(x, t) { return sin(x, t) > 0 ? 1 : -1; }
 function tri(x, t) { return Math.abs(1 - (2 * t * x) % 2) * 2 - 1; }
+
