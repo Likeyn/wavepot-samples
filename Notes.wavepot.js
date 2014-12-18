@@ -72,11 +72,6 @@ function osc(n, t) {
     return previousValue + tri(currentValue, t);
   }, 0);
 }
-
-function average(p, n) { return (p + n) / 2; }
 function Noise() { return Math.random() * 2 - 1; }
-function sin(x, t) { return Math.sin(tau * t * x); }
-function saw(x, t) { return 1-2 * (t % (1/x)) * x; }
-function sqr(x, t) { return sin(x, t) > 0 ? 1 : -1; }
 function tri(x, t) { return Math.abs(1 - (2 * t * x) % 2) * 2 - 1; }
 
