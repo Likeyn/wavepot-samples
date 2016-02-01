@@ -32,8 +32,8 @@ export default function Notes(tuning = 440) {
   // Properties
   var self = this;
   var range = 12;
-  var regxp = /^([A-G])(\d)?([#b])?(m)?/;
-  var value = {'C':0, 'D':2, 'E':4, 'F':5, 'G':7, 'A':9, 'B':11, '#':1, 'b':-1};
+  var regxp = /^([A-G-])(\d)?([#b])?(m)?/;
+  var value = {'C':0, 'D':2, 'E':4, 'F':5, 'G':7, 'A':9, 'B':11, '#':1, 'b':-1, '-':null};
   self.tuning = tuning;
 
   /**
@@ -63,7 +63,7 @@ export default function Notes(tuning = 440) {
 
   // Private methods
   var _note = function(n) {
-    return Math.pow(2, (n - 33) / range) * self.tuning;
+    return Number.isInteger(n) ? Math.pow(2, (n - 33) / range) * self.tuning : 0;
   };
   var _parse = function(s) {
     var m = regxp.exec(s);
