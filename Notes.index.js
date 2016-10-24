@@ -6,6 +6,9 @@
 
 import Notes from './index';
 
+var bpm = 143;
+var tuning = 440;
+
 // Chords & instrumental
 var chordseq = [
   'D1m', 'B1b', 'C1', 'D1m',
@@ -33,12 +36,15 @@ var instruseq = [
 ];
 
 // Get the Notes class to process the chords & instrumental line...
+tuning *= 120 / bpm;
 var notes = new Notes();
 var cseq = chordseq.map(notes.chord);
 var iseq = instruseq.map(notes.note);
 
 // Main
 export function dsp(t) {
+
+  t *= bpm / 120;
 
   // ...then sequence the given arrays of frequencies...
   var cc = sequence(1, cseq, t);
