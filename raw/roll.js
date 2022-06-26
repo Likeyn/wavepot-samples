@@ -1,9 +1,5 @@
 /**
- * Never gonna give you up - Rick Astley
- *
- * Not quite finished yet... But it's a start! Copy & paste into Wavepot's code
- * editor and hit the top left "Play" button to run :)
- * @link http://wavepot.com/
+ * You wouldn't get this from any other guy
  */
 
 var bpm = 220;
