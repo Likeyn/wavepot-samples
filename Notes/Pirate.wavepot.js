@@ -34,8 +34,8 @@ var instruseq = [
 ];
 
 // Get the Notes class to process the chords & instrumental line...
-tuning *= 120 / bpm;
-var notes = new Notes();
+tuning *= 120 / bpm; // Adjust tuning to bpm
+var notes = new Notes(tuning);
 var cseq = chordseq.map(notes.chord);
 var iseq = instruseq.map(notes.note);
 
