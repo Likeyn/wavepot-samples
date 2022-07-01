@@ -4,7 +4,7 @@
  * @author Likeyn
  */
 
-var bpm = 143;
+var bpm = 150;
 var tuning = 440;
 
 // Chords & instrumental
